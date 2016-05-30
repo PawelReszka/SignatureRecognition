@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+    $("#featureAlgSelect").change(function() {
+        $.get("/initFeatureAlg/"+ $(this).val(), function (data) {
+            $("#featureExtractionDiv").html(data);
+        });
+    });
+
+    $("#teachAlgSelect").change(function () {
+        $.get("/initComputingAlg/" + $(this).val(), function (data) {
+            $("#trainingDiv").html(data);
+        });
+    });
+
+    $("#teachBtn").click(function () {
+        var data = {};
+        var files = $("#files")[0].files;
+        var filesArr = [];
+        for (var i = 0; i < files.length; i++) {
+            filesArr.push(files[i].name);
+        }
+
+        var forgeries = $("#filesF")[0].files;
+        var forgeriesArr = [];
+        for (var i = 0; i < forgeries.length; i++) {
+            forgeriesArr.push(forgeries[i].name);
+        }
+
+        data.Files = filesArr;
+        data.Forgeries = forgeriesArr;
+        data.Directory = $("#directory").val();
+        data.ForgeriesDirectory = $("#directoryF").val();
+        data.FeatureAlgorithmName = $("#featureAlgSelect").val();
+        data.ComputingAlgorithmName = $("#teachAlgSelect").val();
+        data.FeatureAlgorithmParameters = $(".featureFields").map(function () {
+            return $(this).val();
+        }).get();
+
+        data.ComputingAlgorithmParameters = $(".techingFields").map(function () {
+            return $(this).val();
+        }).get();
+
+        $.ajax({
+            type: "POST",
+            url: "teach",
+            data: data,
+            success: function() {
+            }
+        });
+    });
+
+    $("#verifyBtn").click(function() {
+        var file = $("#file")[0].files[0].name;
+        var verifyDir = $("#verifyDir").val();
+        alert("ver dir: " + verifyDir);
+        if (verifyDir == null || verifyDir == 'undefined' || verifyDir == "") {
+            verifyDir =  $("#directory").val();
+        }
+        var data = {};
+        data.File = verifyDir + file;
+        alert(data);
+        $.ajax({
+            type: "POST",
+            url: "verify",
+            data: data,
+            success: function (result) {
+                $("#results").append("<p>"+result+"</p>");
+            }
+        });
+    });
+    </script>
+</body>
+</html>

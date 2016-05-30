@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignatureRecognitionConsole", "SignatureRecognitionConsole\SignatureRecognitionConsole.csproj", "{8C01A3BD-F1DB-40F6-A7E7-1CD05FAEB75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureEngines", "FeatureEngines\FeatureEngines.csproj", "{993661FC-7E90-42F7-81A3-F587F8BBDA9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputingEngines", "ComputingEngines\ComputingEngines.csproj", "{A9FED441-1A99-4C6C-83C8-FE727A7B7713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignatureRecognitionApp", "SignatureRecognitionApp\SignatureRecognitionApp.csproj", "{B5370D11-0793-4272-9568-C765A16B96C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignatureRecognitionWebApp", "SignatureRecognitionWebApp\SignatureRecognitionWebApp.csproj", "{18CAA0EE-1F5F-4107-8A9B-4E15541A833B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "encog-core-cs", "..\..\..\sample repos\encog\encog-dotnet-core-master\encog-core-cs\encog-core-cs.csproj", "{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C01A3BD-F1DB-40F6-A7E7-1CD05FAEB75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C01A3BD-F1DB-40F6-A7E7-1CD05FAEB75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C01A3BD-F1DB-40F6-A7E7-1CD05FAEB75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C01A3BD-F1DB-40F6-A7E7-1CD05FAEB75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993661FC-7E90-42F7-81A3-F587F8BBDA9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993661FC-7E90-42F7-81A3-F587F8BBDA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993661FC-7E90-42F7-81A3-F587F8BBDA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993661FC-7E90-42F7-81A3-F587F8BBDA9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FED441-1A99-4C6C-83C8-FE727A7B7713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9FED441-1A99-4C6C-83C8-FE727A7B7713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9FED441-1A99-4C6C-83C8-FE727A7B7713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9FED441-1A99-4C6C-83C8-FE727A7B7713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5370D11-0793-4272-9568-C765A16B96C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5370D11-0793-4272-9568-C765A16B96C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5370D11-0793-4272-9568-C765A16B96C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5370D11-0793-4272-9568-C765A16B96C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CAA0EE-1F5F-4107-8A9B-4E15541A833B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CAA0EE-1F5F-4107-8A9B-4E15541A833B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CAA0EE-1F5F-4107-8A9B-4E15541A833B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CAA0EE-1F5F-4107-8A9B-4E15541A833B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

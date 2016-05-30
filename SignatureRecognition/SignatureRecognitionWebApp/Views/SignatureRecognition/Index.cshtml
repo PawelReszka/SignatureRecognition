@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Signature recognition</h2>
+
+<div id="mainSettingsDiv">
+    <label>Files</label>
+    <input type="file" name="my_files[]" multiple id="files"/><br/>
+    <label>Directory</label>
+    <input id="directory" value="E:\Magisterka\signatures\Italian_Training\Training\15\"/><br/>
+    <label>Forgeries</label>
+    <input type="file" name="my_filesF[]" multiple id="filesF" /><br />
+    <label>Directory</label>
+    <input id="directoryF" value="E:\Magisterka\signatures\Italian_Training\Training\forgeries\" /><br />
+    <label>Feature algorithm</label>
+    <br/>
+    <select id="featureAlgSelect" >
+        @{
+            foreach (var featureAlg in ViewBag.FeatureAlgs)
+            {<text><option value="@featureAlg">@featureAlg</option> </text>
+            }
+        }
+    </select>
+    <br />
+    <label>Computing algorithm</label>
+    <br />
+    <select id="teachAlgSelect">
+        @{
+            foreach (var teachAlg in ViewBag.TeachAlgs)
+            {<text>
+            <option value="@teachAlg">@teachAlg</option> </text>
+            }
+        }
+    </select>
+</div>
+<div id="featureExtractionDiv">
+
+</div>
+<div id="trainingDiv">
+
+</div>
+<div id="verifyDiv">
+    <input type="button" value="Teach" id="teachBtn"/><br/>
+    <label>File to verify</label>
+    <br/>
+    <label>(Optional) directory of file to verify</label>
+    <input id="verifyDir"/>
+    <input type="file" name="my_file" id="file"/>
+    <br/>
+    <br/>
+    <br/>
+    <input type="button" value="Verify" id="verifyBtn"/>
+    <br/>
+    <div id="output"></div>
+</div>
+
+<div id="results">
+    <label>Results</label>
+</div>
+

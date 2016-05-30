@@ -1,0 +1,7 @@
+﻿<h3 id="algHeader">Feature algorithm</h3>
+
+@foreach (var f in ViewBag.Fields)
+{<text><label>@f.FieldName</label>
+        <input type="number" class="featureFields" value="@f.Value"/>
+     </text>
+}
